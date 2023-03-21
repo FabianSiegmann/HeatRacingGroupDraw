@@ -13,13 +13,12 @@ itertools
 math
 fpdf
 ```
-Except for the latter, those modules should be included in any usual python installation. You can install the fpdf module via
-'''
+Except for the latter, those modules should be included in any usual python installation. You can install the *fpdf* module ib your command line via:
+```
 pip install fpdf
-'''
-
-
+```
 
 # Usage
+When the requirements are fullfilled, the programm can be executed by running *create_group_draw.py*
 
 # Acknowledgements

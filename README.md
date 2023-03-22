@@ -1,5 +1,5 @@
 # HeatRacingGroupDraw
-In this repository, we present a method that allocates a certain number of drivers into a certain number of groups over a certain number of rounds. 
+In this repository, we present a method that allocates a certain number of drivers into a certain number of groups over a certain number of rounds. This procedure will be used for creating the group and kart draw at the German Indoor Kart Championship (https://www.gikc.de/). 
 
 The method is based on an initial randomly distributed group assignment, which is then optimized in a way that "multiple meetings" of the same competitors are minimized. 
 

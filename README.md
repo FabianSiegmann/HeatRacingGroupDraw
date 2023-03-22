@@ -19,7 +19,7 @@ pip install fpdf
 ```
 
 # Usage
-When the requirements are fullfilled, the programm can be executed by running *create_group_draw.py* and specifying the boundary conditions of your group draw. The programm will ask for the following details:
+When the requirements are fullfilled, the program can be executed by running *create_group_draw.py* and specifying the boundary conditions of your group draw. The program will ask for the following details:
 ```
 Number of rounds during the preliminary heats
 Number of heats per round
@@ -27,11 +27,20 @@ Number of drivers per heat
 ```
 where the first one is not the total number of heats, but the number of heats that each driver will participate in.
 
-The programm will than create a group and kart draw with anonymous names (Driver 001, Driver 002, etc). The results will be printed as PDF in the *output* folder. It will also store the draw in a pickle file that can be used afterwards. Therefore the program uses the *timing.txt* file from the *resources* folder. To use your own schedule you can replace this file with your own schedule (using the same formatting. First line of text file represents start time of first race, second line represents start time of second race, etc)
+For GIKC 2023, the boundary conditions are
+```
+Number of rounds during the preliminary heats: 6
+Number of heats per round: 6
+Number of drivers per heat: 22
+```
+
+The program will than create a group and kart draw with anonymous names (Driver 001, Driver 002, etc). The results will be printed as PDF in the *output* folder. It will also store the draw in a pickle file that can be used afterwards. 
+
+In the PDF files you will find a sart time for each race. This is based on the *timing.txt* file from the *resources* folder. To use your own schedule you can replace this file with your own schedule (using the same formatting. First line of text file represents start time of first race, second line represents start time of second race, etc.)
 
 If you want to assign real driver names to your draw, you can do so by replacing the *entry_list.txt* in the *resources* folder with your actual driver names (again, using the same formatting: First line of text file represents "Driver 001", second line represents "Driver 002", etc.) and then run the file *assign_names_to_draw*.
 
-This will replace the anonymous driver names with your real driver names. 
+This will replace the anonymous driver names with your real driver names. In this repository, the *entry_list.txt* is filled with 120 generic names. 
 
 For GIKC 2023, the assignment between real driver names and anonymous driver names will be performed with a raffle. 
 

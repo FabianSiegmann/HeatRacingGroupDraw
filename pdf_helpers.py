@@ -1,11 +1,7 @@
 import fpdf
-from group_draw_constants import NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT
 
 # Define handling mode of fonts for the fpdf module
 fpdf.set_global("FPDF_CACHE_MODE", 1)
-
-# Calculate a specific size factor to ensure that the group draw always fits on one page
-SIZE_FACTOR = round(1 / DRIVER_PER_HEAT * 130, 1)
 
 class PDF(fpdf.FPDF):
      pass # nothing happens when it is executed.
@@ -26,7 +22,10 @@ def create_PDF_GIKC_style(pdf):
     return pdf
 
 
-def create_personal_schedule(data, driver, races):
+def create_personal_schedule(data, driver, races, NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT):
+    # Calculate a specific size factor to ensure that the group draw always fits on one page
+    SIZE_FACTOR = 1 / DRIVER_PER_HEAT * 130
+
     # Create PDF in GIKC Style
     pdf = PDF(orientation='P', unit='mm', format='A5')
     pdf = create_PDF_GIKC_style(pdf)
@@ -86,7 +85,10 @@ def create_personal_schedule(data, driver, races):
     pdf.close()
 
 
-def create_race_pdf(races, round, heat):
+def create_race_pdf(races, round, heat, DRIVER_PER_HEAT):
+    # Calculate a specific size factor to ensure that the group draw always fits on one page
+    SIZE_FACTOR = 1 / DRIVER_PER_HEAT * 130
+
     # Create PDF in GIKC Style
     pdf = PDF(orientation='P', unit='mm', format='A5')
     pdf = create_PDF_GIKC_style(pdf)

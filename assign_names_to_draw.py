@@ -1,6 +1,4 @@
-import random
 import pickle
-from group_draw_constants import NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT
 from pdf_helpers import create_race_pdf, create_personal_schedule
 
 def get_anonymous_driver_list(races):
@@ -42,6 +40,12 @@ def get_drivers_races(driver, races):
 with open('output/python-files/group-draw.pkl', 'rb') as file:      
     races = pickle.load(file)  
 
+# Get boundary conditions of group draw
+NUMBER_OF_ROUNDS = len(races)
+HEATS_PER_ROUND = len(races[1])
+DRIVER_PER_HEAT = len(races[1][1]['driver'])
+
+
 # Get anonymous driver list
 anonym_driver_names = get_anonymous_driver_list(races)
 
@@ -62,14 +66,14 @@ races = assign_names_to_race_overview(races, driver_ID_list)
 print("Creating Race PDFs...")
 for round in range(1,NUMBER_OF_ROUNDS+1):
     for heat in range(1, HEATS_PER_ROUND+1):
-        create_race_pdf(races, round, heat)
+        create_race_pdf(races, round, heat, DRIVER_PER_HEAT)
 
 # Create personal driver schedule
 print("Creating Personal Race Schedules...")
 for driver in real_driver_names:
     # Ged driver's data
     data = get_drivers_races(driver, races)
-    create_personal_schedule(data, driver, races)
+    create_personal_schedule(data, driver, races, NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT)
 
 print("Done!")
     

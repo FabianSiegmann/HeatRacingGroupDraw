@@ -120,13 +120,13 @@ with open('output/python-files/group-draw.pkl', 'wb') as file:
 print("Creating Race PDFs...")
 for round in range(1,NUMBER_OF_ROUNDS+1):
     for heat in range(1, HEATS_PER_ROUND+1):
-        create_race_pdf(races, round, heat)
+        create_race_pdf(races, round, heat, DRIVER_PER_HEAT)
 
 # Create personal driver schedule
 print("Creating Personal Race Schedules...")
 for driver in anonym_driver_names:
     # Ged driver's data
     data = get_drivers_races(driver, races)
-    create_personal_schedule(data, driver, races)
+    create_personal_schedule(data, driver, races, NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT)
 
 print("Done!")

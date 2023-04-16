@@ -70,8 +70,8 @@ for round in range(1,NUMBER_OF_ROUNDS+1):
 
 # Create personal driver schedule
 print("Creating Personal Race Schedules...")
-for driver in real_driver_names:
-    # Ged driver's data
+for driver in real_driver_names[0:HEATS_PER_ROUND * DRIVER_PER_HEAT]:
+    # Get driver's data
     data = get_drivers_races(driver, races)
     create_personal_schedule(data, driver, races, NUMBER_OF_ROUNDS, HEATS_PER_ROUND, DRIVER_PER_HEAT)
 

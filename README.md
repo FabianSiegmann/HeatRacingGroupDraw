@@ -45,7 +45,7 @@ This will replace the anonymous driver names with your real driver names. In thi
 For GIKC 2023, the assignment between real driver names and anonymous driver names will be performed with a raffle. 
 
 # Acknowledgements
-The group draw in this project is based on previous work regarding the *Social-Golfer-Problem* from Brad Buchanan: https://github.com/islemaster/good-enough-golfers
+The group draw in this project is based on previous work regarding the *Social-Golfer-Problem* from Brad Buchanan: https://github.com/islemaster/good-enough-golfers .
 Furthermore, special acknowledgment to https://github.com/fr4nt1x for converting the code into python language
 
 
